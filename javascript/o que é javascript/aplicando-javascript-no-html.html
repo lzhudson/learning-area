@@ -7,16 +7,20 @@
 <body>
   <button>Click em mim</button>
   <script>
-    function criarParagrafo(){
-      var para = document.createElement('p');
-      para.textContent = 'Você criou um paragrafo!';
-      document.body.appendChild(para);
-    } 
-    var botoes = document.querySelectorAll('button');
-    for(var i = 0; i < botoes.length; i++){
-      botoes[i].addEventListener('click', criarParagrafo);
-    }
-    
+    /* O evento abaixo, faz com o navegador só execute o codigo 
+       que está contido no bloco após o carregamento da página
+    */
+    document.addEventListener('DOMContentLoaded', function(){
+      function criarParagrafo(){
+        var para = document.createElement('p');
+        para.textContent = 'Você criou um paragrafo!';
+        document.body.appendChild(para);
+        var botoes = document.querySelectorAll('button');
+        for(var i = 0; i < botoes.length; i++){
+          botoes[i].addEventListener('click', criarParagrafo);
+        }
+      } 
+    })
   </script>
 </body>
 </html>
