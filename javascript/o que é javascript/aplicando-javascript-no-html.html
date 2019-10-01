@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Aplicando exemplos em Javascript</title>
+</head>
+<body>
+  <button>Click em mim</button>
+  <script>
+    function criarParagrafo(){
+      var para = document.createElement('p');
+      para.textContent = 'Você criou um paragrafo!';
+      document.body.appendChild(para);
+    } 
+    var botoes = document.querySelectorAll('button');
+    for(var i = 0; i < botoes.length; i++){
+      botoes[i].addEventListener('click', criarParagrafo);
+    }
+    
+  </script>
+</body>
+</html>
